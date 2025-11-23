@@ -1,0 +1,542 @@
+/* ==========================================================================
+   Flickers of Majesty - Main Stylesheet
+   FOM-Lite Protocol Implementation
+   Version: 1.0
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #888;
+  --bg-primary: #ffffff;
+  --bg-subtle: #f8f8f8;
+  --accent: #0066cc;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --border: #e5e5e5;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width-content: 70ch;
+  --max-width-container: 1200px;
+  --max-width-wide: 1400px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: var(--space-xl);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container-wide {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-lg) 0;
+}
+
+main {
+  min-height: 60vh;
+  padding: var(--space-xl) 0;
+}
+
+footer {
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border);
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-3xl);
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+   FOM-Lite Protocol Components
+   ========================================================================== */
+
+/* Answer Line */
+.answer-line {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: var(--space-md) 0 var(--space-xl);
+  max-width: var(--max-width-content);
+}
+
+/* Fit-Guidance Section */
+.fit-guidance {
+  background: var(--bg-subtle);
+  border-left: 4px solid var(--accent);
+  padding: var(--space-lg);
+  margin: var(--space-xl) 0;
+  border-radius: 4px;
+}
+
+.fit-guidance h2 {
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+.fit-guidance-good,
+.fit-guidance-poor {
+  margin-top: var(--space-lg);
+}
+
+.fit-guidance-good h3 {
+  color: var(--success);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.fit-guidance-poor h3 {
+  color: var(--warning);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.fit-guidance ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.fit-guidance li {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.fit-guidance-good li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.fit-guidance-poor li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--warning);
+  font-weight: bold;
+}
+
+/* Product Specifications */
+.product-specs {
+  margin: var(--space-xl) 0;
+}
+
+.specs-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm) var(--space-lg);
+  max-width: 600px;
+  margin-top: var(--space-md);
+}
+
+.specs-list dt {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.specs-list dd {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* FAQ Section */
+.faq {
+  margin: var(--space-3xl) 0;
+  max-width: var(--max-width-content);
+}
+
+.faq h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-xl);
+}
+
+.faq-item {
+  margin: var(--space-xl) 0;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+}
+
+.faq-item ul {
+  margin-top: var(--space-md);
+}
+
+/* ==========================================================================
+   Product Components
+   ========================================================================== */
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Product Card */
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.product-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: var(--space-md);
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Product Detail Page */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0;
+}
+
+@media (min-width: 768px) {
+  .product-detail {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-pricing {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  background: var(--bg-subtle);
+  border-radius: 8px;
+}
+
+.product-pricing .price {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.price-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Category Components
+   ========================================================================== */
+
+.category-hero {
+  position: relative;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-3xl) 0;
+  background: var(--bg-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width-content);
+  padding: 0 var(--space-xl);
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.category-description {
+  max-width: var(--max-width-content);
+  margin: var(--space-3xl) 0;
+}
+
+.category-description h3 {
+  margin-top: var(--space-xl);
+}
+
+/* ==========================================================================
+   Progressive Enhancement (No-JS Support)
+   ========================================================================== */
+
+.no-js .fallback {
+  display: block;
+}
+
+.no-js .js-only {
+  display: none;
+}
+
+.no-js-visible {
+  display: none;
+}
+
+.no-js .no-js-visible {
+  display: block;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--space-md); }
+.mt-2 { margin-top: var(--space-xl); }
+.mt-3 { margin-top: var(--space-2xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--space-md); }
+.mb-2 { margin-bottom: var(--space-xl); }
+.mb-3 { margin-bottom: var(--space-2xl); }
+
+/* ==========================================================================
+   Responsive Images
+   ========================================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  .product-card {
+    break-inside: avoid;
+  }
+}
