@@ -131,7 +131,7 @@ This document details the 6-layer Claude Code enhancement system installed on th
 
 ## Skill Activation Rules
 
-The `.claude/skill-rules.json` has been customized for photography e-commerce:
+The `.claude/skill-rules.json` has been customized for photography e-commerce with **FOM-Lite guardrails**:
 
 ### Active Skills:
 
@@ -144,24 +144,109 @@ The `.claude/skill-rules.json` has been customized for photography e-commerce:
    - Files: *.html, *.css, *.js
    - Purpose: HTML/CSS/JS best practices
 
-3. **seo-optimizer** (High Priority)
+3. **seo-optimizer** (High Priority) ⚠️ **WITH FOM-LITE GUARDRAILS**
    - Triggers: SEO, meta tags, schema.org, structured data
    - Files: *.html, products/**, categories/**
-   - Purpose: SEO optimization for product pages
+   - Purpose: SEO optimization that supports FOM-Lite philosophy
+   - **Guardrails:**
+     - ✅ ACCEPT: Schema.org, semantic HTML, natural meta descriptions, meaningful alt text
+     - ❌ REJECT: Keyword stuffing, readability compromises, removing AI-first meta tags
 
 4. **accessibility-auditor** (High Priority)
    - Triggers: accessibility, a11y, WCAG, aria
    - Files: *.html
    - Purpose: Web accessibility compliance
 
-5. **content-strategy** (High Priority)
+5. **content-strategy** (High Priority) ⚠️ **WITH FOM-LITE GUARDRAILS**
    - Triggers: content, product description, copywriting
    - Files: products/**, categories/**, index.html
-   - Purpose: Content strategy for product descriptions
+   - Purpose: Content strategy aligned with FOM-Lite philosophy
+   - **Guardrails:**
+     - ✅ ACCEPT: Natural language, storytelling, fit-guidance, authentic voice
+     - ❌ REJECT: Keyword-stuffed descriptions, robotic copy, template-based content
 
 6. **performance-analyzer** (Medium Priority)
    - Triggers: performance, lighthouse, core web vitals
    - Purpose: Web performance optimization
+
+---
+
+## FOM-Lite Philosophy Integration
+
+All skills have been configured to respect the FOM-Lite philosophy:
+
+### Priority Order:
+1. **AI-First:** Structure content so AI can accurately understand
+2. **Human-First:** NEVER compromise user experience
+3. **Google Second:** SEO is tertiary, not primary
+
+### Skill Filtering Lens:
+
+Every skill suggestion passes through this evaluation:
+
+```
+Skill suggests something
+    ↓
+✅ Does it help AI understand?
+✅ Does it maintain/improve human experience?
+✅ Does it happen to help SEO? (Bonus!)
+❌ Does it sacrifice human/AI for SEO? (REJECT!)
+```
+
+### Guardrail Principles:
+
+**SEO Skills:**
+- Focus on technical SEO (schema.org, semantic HTML, meta tags)
+- Benefits AI + humans + search engines simultaneously
+- Rejects keyword stuffing, readability compromises, removal of AI-helpful elements
+
+**Content Skills:**
+- Prioritize authentic, natural language for humans
+- Maintain AI comprehension through structure, not robotic language
+- Reject keyword-optimized, template-based copy
+
+**Accessibility:**
+- Benefits all audiences (humans, AI, assistive tech, search engines)
+- Always prioritize - never compromises
+
+**Performance:**
+- Improves human experience first
+- Supports all other goals
+- Always prioritize
+
+### Examples:
+
+**✅ ACCEPTED by guardrails:**
+```html
+<!-- Schema.org markup - helps AI + humans + SEO -->
+<script type="application/ld+json">
+{
+  "@type": "Product",
+  "name": "Mountain Majesty",
+  "description": "Golden hour light transforms ordinary peaks..."
+}
+</script>
+
+<!-- Natural, human-focused description -->
+<p>This photograph captures the fleeting moment when...</p>
+
+<!-- AI-first meta + standard meta -->
+<meta name="ai:summary" content="Landscape photography...">
+<meta name="description" content="Landscape photography...">
+```
+
+**❌ REJECTED by guardrails:**
+```html
+<!-- Keyword stuffing - violates human-first -->
+<h1>Buy Mountain Photography Prints Online Shop Store</h1>
+
+<!-- Unnatural keyword density -->
+<p>Mountain photography mountain prints mountain landscape...</p>
+
+<!-- Removing AI-helpful elements -->
+<meta name="description" content="...">
+<!-- DON'T remove: <meta name="ai:summary" content="..."> -->
+```
 
 ---
 

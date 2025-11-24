@@ -71,7 +71,24 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "SEO optimization for product and category pages",
+            "description": "SEO optimization that SUPPORTS FOM-Lite philosophy: AI-first, Human-first, Google second. Focuses on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. MUST NOT suggest keyword stuffing, readability compromises, or removal of AI-helpful elements.",
+            "guardrails": {
+                "must_reject": [
+                    "Keyword stuffing or unnatural keyword density",
+                    "Compromising human readability for SEO",
+                    "Removing or discouraging AI-first meta tags (ai:summary, ai:*, etc)",
+                    "Hidden text or deceptive practices",
+                    "Sacrificing UX for search ranking"
+                ],
+                "must_accept": [
+                    "Schema.org structured data (Product, Offer, Organization, etc)",
+                    "Semantic HTML that helps AI comprehension AND accessibility",
+                    "Descriptive, natural meta descriptions",
+                    "Meaningful alt text for accessibility AND SEO",
+                    "OpenGraph tags for social sharing"
+                ],
+                "philosophy": "Technical SEO that serves all three audiences: AI understanding, human experience, search discoverability"
+            },
             "promptTriggers": {
                 "keywords": [
                     "SEO",
@@ -148,7 +165,24 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Content strategy for product descriptions and photography storytelling",
+            "description": "Content strategy for product descriptions and photography storytelling aligned with FOM-Lite philosophy. Prioritizes authentic, natural language that serves humans first while maintaining AI comprehension. Storytelling over sales-speak.",
+            "guardrails": {
+                "must_reject": [
+                    "Keyword-stuffed product descriptions",
+                    "Unnatural, robotic copy optimized only for search",
+                    "Removing fit-guidance sections for brevity",
+                    "Generic, template-based descriptions",
+                    "Sales-heavy language that sacrifices authenticity"
+                ],
+                "must_accept": [
+                    "Natural, conversational product descriptions",
+                    "Photography storytelling that connects emotionally",
+                    "Fit-guidance sections that help buyers make decisions",
+                    "Authentic voice that prioritizes human reader",
+                    "Structured content that AI can parse (headings, lists, schema)"
+                ],
+                "philosophy": "Write for humans first. Make AI comprehension easy through structure, not through robotic language. Tell stories, don't just list features."
+            },
             "promptTriggers": {
                 "keywords": [
                     "content",
@@ -221,6 +255,20 @@
             "project": "Flickers of Majesty - Photography e-commerce site",
             "focus": "Static HTML, SEO, accessibility, performance, content strategy",
             "protocol": "FOM-Lite v1.0 (AI-first, human-first content protocol)"
+        },
+        "fom_lite_philosophy": {
+            "priority_order": [
+                "1. AI-First: Structure content so AI can accurately understand",
+                "2. Human-First: NEVER compromise user experience",
+                "3. Google Second: SEO is tertiary, not primary"
+            ],
+            "guardrail_principles": {
+                "seo": "SEO skills must focus on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. Reject keyword stuffing, readability compromises, or removal of AI-helpful elements.",
+                "content": "Content skills must prioritize authentic, natural language for humans while maintaining AI comprehension through structure. Reject robotic, keyword-optimized copy.",
+                "accessibility": "Accessibility benefits all audiences (humans, AI, assistive tech, search engines). Always prioritize.",
+                "performance": "Performance improves human experience and supports all other goals. Always prioritize."
+            },
+            "skill_filtering": "All skill suggestions must pass through FOM-Lite lens: Does it help AI? Does it maintain/improve human experience? Does it happen to help SEO? (Bonus!) Does it sacrifice human/AI for SEO? (Reject!)"
         }
     }
 }
