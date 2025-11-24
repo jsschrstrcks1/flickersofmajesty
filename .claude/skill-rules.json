@@ -1,0 +1,226 @@
+{
+    "version": "1.0",
+    "description": "Skill activation triggers for Flickers of Majesty photography e-commerce site. Controls when skills automatically suggest or block actions.",
+    "skills": {
+        "skill-developer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Meta-skill for creating and managing Claude Code skills",
+            "promptTriggers": {
+                "keywords": [
+                    "skill system",
+                    "create skill",
+                    "add skill",
+                    "skill triggers",
+                    "skill rules",
+                    "hook system",
+                    "skill development",
+                    "skill-rules.json"
+                ],
+                "intentPatterns": [
+                    "(how do|how does|explain).*?skill",
+                    "(create|add|modify|build).*?skill",
+                    "skill.*?(work|trigger|activate|system)"
+                ]
+            }
+        },
+        "frontend-dev-guidelines": {
+            "type": "guardrail",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "HTML/CSS/JavaScript best practices for static photography site",
+            "promptTriggers": {
+                "keywords": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "page",
+                    "layout",
+                    "styling",
+                    "responsive",
+                    "mobile-first",
+                    "accessibility",
+                    "WCAG",
+                    "semantic HTML"
+                ],
+                "intentPatterns": [
+                    "(create|add|make|build|update|modify|edit).*?(page|HTML|CSS|layout)",
+                    "(how to|best practice).*?(HTML|CSS|accessibility)",
+                    "(style|design|layout).*?(page|component)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "*.html",
+                    "**/*.html",
+                    "css/*.css",
+                    "**/*.css",
+                    "js/*.js",
+                    "**/*.js"
+                ],
+                "contentPatterns": [
+                    "<html",
+                    "<!DOCTYPE",
+                    "@media",
+                    "var\\(--"
+                ]
+            }
+        },
+        "seo-optimizer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "SEO optimization for product and category pages",
+            "promptTriggers": {
+                "keywords": [
+                    "SEO",
+                    "meta tags",
+                    "metadata",
+                    "schema.org",
+                    "structured data",
+                    "OpenGraph",
+                    "og:image",
+                    "title tag",
+                    "description",
+                    "canonical",
+                    "sitemap",
+                    "robots.txt"
+                ],
+                "intentPatterns": [
+                    "(add|create|optimize|improve).*?(SEO|metadata|schema)",
+                    "(how to|best practice).*?(SEO|meta tags|structured data)",
+                    "optimize.*?(search|ranking|visibility)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "*.html",
+                    "products/**/*.html",
+                    "categories/**/*.html"
+                ],
+                "contentPatterns": [
+                    "<meta name=",
+                    "schema.org",
+                    "application/ld\\+json",
+                    "og:"
+                ]
+            }
+        },
+        "accessibility-auditor": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Web accessibility compliance (WCAG AA)",
+            "promptTriggers": {
+                "keywords": [
+                    "accessibility",
+                    "a11y",
+                    "WCAG",
+                    "aria",
+                    "alt text",
+                    "screen reader",
+                    "keyboard navigation",
+                    "color contrast",
+                    "semantic HTML"
+                ],
+                "intentPatterns": [
+                    "(check|audit|verify|test).*?(accessibility|a11y|WCAG)",
+                    "(add|improve).*?(alt text|aria|accessibility)",
+                    "(how to|best practice).*?(accessibility|WCAG)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "*.html",
+                    "**/*.html"
+                ],
+                "contentPatterns": [
+                    "<img",
+                    "aria-",
+                    "role=",
+                    "<button",
+                    "<a "
+                ]
+            }
+        },
+        "content-strategy": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Content strategy for product descriptions and photography storytelling",
+            "promptTriggers": {
+                "keywords": [
+                    "content",
+                    "product description",
+                    "photography",
+                    "storytelling",
+                    "copywriting",
+                    "product copy",
+                    "category description",
+                    "fit-guidance"
+                ],
+                "intentPatterns": [
+                    "(write|create|improve).*?(description|content|copy)",
+                    "(how to|best practice).*?(product description|copywriting)",
+                    "content.*?(strategy|planning|creation)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "products/**/*.html",
+                    "categories/**/*.html",
+                    "index.html"
+                ],
+                "contentPatterns": [
+                    "class=\"product-description\"",
+                    "class=\"fit-guidance\"",
+                    "<meta name=\"ai:summary\""
+                ]
+            }
+        },
+        "performance-analyzer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Web performance optimization (Core Web Vitals, Lighthouse)",
+            "promptTriggers": {
+                "keywords": [
+                    "performance",
+                    "optimize",
+                    "lighthouse",
+                    "core web vitals",
+                    "LCP",
+                    "FID",
+                    "CLS",
+                    "page speed",
+                    "loading time",
+                    "image optimization"
+                ],
+                "intentPatterns": [
+                    "(optimize|improve|test).*?(performance|speed|loading)",
+                    "(how to|best practice).*?(performance|optimization)",
+                    "lighthouse.*?(score|audit)"
+                ]
+            }
+        }
+    },
+    "notes": {
+        "enforcement_types": {
+            "suggest": "Skill suggestion appears but doesn't block execution",
+            "block": "Requires skill to be used before proceeding (guardrail)",
+            "warn": "Shows warning but allows proceeding"
+        },
+        "priority_levels": {
+            "critical": "Highest - Always trigger when matched",
+            "high": "Important - Trigger for most matches",
+            "medium": "Moderate - Trigger for clear matches",
+            "low": "Optional - Trigger only for explicit matches"
+        },
+        "customization": {
+            "project": "Flickers of Majesty - Photography e-commerce site",
+            "focus": "Static HTML, SEO, accessibility, performance, content strategy",
+            "protocol": "FOM-Lite v1.0 (AI-first, human-first content protocol)"
+        }
+    }
+}
