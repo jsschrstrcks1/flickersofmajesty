@@ -28,8 +28,13 @@
   <meta name="twitter:description" content="Dramatic Rocky Mountain sunrise fine art photograph. Canvas, framed, and metal prints available.">
   <meta name="twitter:image" content="https://www.flickersofmajesty.com/images/products/mountain-majesty-main.webp">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="https://www.flickersofmajesty.com/css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <!-- Remove no-js class if JavaScript is enabled -->
   <script>document.documentElement.classList.remove('no-js');</script>
@@ -58,11 +63,6 @@
       "availability": "https://schema.org/InStock",
       "url": "https://www.flickersofmajesty.com/products/mountain-majesty/"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "1"
-    },
     "category": "Fine Art Photography > Landscape > Mountain"
   }
   </script>
@@ -82,8 +82,8 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Mountain Landscapes",
-        "item": "https://www.flickersofmajesty.com/categories/mountain-landscapes/"
+        "name": "Landscapes",
+        "item": "https://www.flickersofmajesty.com/collections/landscapes/"
       },
       {
         "@type": "ListItem",
@@ -96,280 +96,400 @@
   </script>
 </head>
 <body>
-  <!-- AI Breadcrumbs -->
-  <!-- ai-breadcrumbs: product | landscape-photography | mountain-photography -->
-  <!-- ai-content-type: product-detail-page -->
-  <!-- ai-product-category: fine-art-photography, wall-art, landscape, mountain, nature -->
-  <!-- ai-answer: Mountain Majesty is a fine art landscape photograph of Rocky Mountain sunrise, available as canvas, framed, and metal prints in sizes from 12x8 to 60x40 inches -->
-  <!-- ai-fit-guidance: Good for: dramatic landscapes, warm palettes, large spaces, nature lovers, inspiring atmospheres. Not for: minimalist decor, small spaces, cool color schemes, abstract preferences -->
-  <!-- ai-use-cases: living-room, office, bedroom, waiting-room, conference-room, gift-for-nature-lover -->
-  <!-- ai-price-range: $49 - $599 USD -->
-
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header>
-    <div class="container">
-      <nav aria-label="Main navigation">
-        <h2 class="sr-only">Main Navigation</h2>
-        <p><a href="https://www.flickersofmajesty.com/"><strong>Flickers of Majesty</strong></a> | Fine Art Photography</p>
+  <!-- =========================
+       SITE HEADER
+       ========================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" aria-label="Flickers of Majesty home">
+          <strong>Flickers of Majesty</strong>
+        </a>
+        <span class="brand-tagline">Fine Art Photography</span>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/collections/">Collections</a></li>
+          <li><a href="/prints/">Print Formats</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
       </nav>
+
+      <div class="header-actions">
+        <button class="cart-button snipcart-checkout" aria-label="Shopping cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+          <span class="cart-count snipcart-items-count"></span>
+        </button>
+
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="/collections/">Collections</a></li>
+        <li><a href="/prints/">Print Formats</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
   <main id="main">
     <div class="container">
+
+      <!-- Product Detail Grid -->
       <article class="product-detail">
         <section class="product-images">
-          <!-- Placeholder for product images -->
-          <img src="https://via.placeholder.com/1200x800/4a5568/ffffff?text=Mountain+Majesty"
-               alt="Mountain Majesty canvas print - main view"
+          <!-- Replace with your product image -->
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85"
+               alt="Mountain Majesty canvas print - dramatic sunrise over Rocky Mountains"
                width="1200" height="800"
                fetchpriority="high">
         </section>
 
         <section class="product-info-sidebar">
-          <h1>Mountain Majesty Canvas Print</h1>
+          <h1>Mountain Majesty</h1>
           <p class="answer-line">
             A breathtaking fine art photograph of sunrise over the Rocky Mountains,
             available as museum-quality canvas prints, framed prints, and metal prints.
-            Perfect for living rooms, offices, and nature enthusiasts.
           </p>
 
-          <div class="product-pricing">
-            <p class="price">From $49.00</p>
-            <p class="price-note">Price varies by size and format</p>
+          <!-- Price Display -->
+          <div class="price-display">
+            <p class="price-starting">Starting at</p>
+            <p class="price-current" id="current-price">$49</p>
           </div>
 
-          <!-- Size selector would go here -->
+          <!-- Product Options - Snipcart Ready -->
+          <div class="product-options">
+            <div class="option-group">
+              <label class="option-label">Print Format</label>
+              <div class="option-buttons" role="radiogroup" aria-label="Select print format">
+                <button type="button" class="option-btn selected" data-format="canvas" data-price-modifier="0">Canvas</button>
+                <button type="button" class="option-btn" data-format="metal" data-price-modifier="20">Metal</button>
+                <button type="button" class="option-btn" data-format="framed" data-price-modifier="40">Framed</button>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label class="option-label">Size</label>
+              <select class="option-select" id="size-select" aria-label="Select print size">
+                <option value="12x8" data-price="49">12" x 8" — $49</option>
+                <option value="18x12" data-price="89">18" x 12" — $89</option>
+                <option value="24x16" data-price="149">24" x 16" — $149</option>
+                <option value="36x24" data-price="249">36" x 24" — $249</option>
+                <option value="48x32" data-price="399">48" x 32" — $399</option>
+                <option value="60x40" data-price="599">60" x 40" — $599</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Add to Cart - Snipcart Ready -->
+          <button class="add-to-cart snipcart-add-item"
+                  data-item-id="mountain-majesty"
+                  data-item-name="Mountain Majesty"
+                  data-item-price="49.00"
+                  data-item-url="/products/mountain-majesty.html"
+                  data-item-description="Rocky Mountains at sunrise - Fine art photograph"
+                  data-item-image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80"
+                  data-item-custom1-name="Format"
+                  data-item-custom1-options="Canvas|Metal[+20.00]|Framed[+40.00]"
+                  data-item-custom2-name="Size"
+                  data-item-custom2-options="12x8|18x12[+40.00]|24x16[+100.00]|36x24[+200.00]|48x32[+350.00]|60x40[+550.00]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            Add to Cart
+          </button>
+
+          <!-- No-JS fallback -->
           <div class="no-js-visible">
-            <p><em>Size and format selection available. Contact for ordering.</em></p>
+            <p><em>Size and format selection requires JavaScript. <a href="/contact/">Contact us</a> to place an order.</em></p>
           </div>
         </section>
       </article>
 
+      <!-- Product Description -->
+      <section class="content-section">
+        <div class="product-description">
+          <h2>About This Photograph</h2>
+
+          <p>
+            Captured during a spectacular sunrise in the Rocky Mountains, this photograph
+            embodies the raw majesty of high-altitude landscapes. The golden hour light
+            bathes the distant peaks in warm, ethereal tones while layers of mountains
+            create depth and atmospheric perspective.
+          </p>
+
+          <p>
+            The composition balances the dramatic scale of the mountains with the intimate
+            warmth of sunrise colors, creating a piece that commands attention while
+            maintaining a sense of peace. This duality makes it equally at home in
+            professional spaces requiring gravitas and personal spaces seeking tranquility.
+          </p>
+        </div>
+      </section>
+
+      <!-- Fit Guidance -->
       <section class="fit-guidance">
-        <h2>Who This Print Is For</h2>
+        <h2>Is This Print Right For You?</h2>
 
         <div class="fit-guidance-good">
-          <h3>This print tends to fit if you:</h3>
+          <h3>This print is perfect if you:</h3>
           <ul>
             <li><strong>Love dramatic landscapes:</strong> Epic mountain vistas with golden hour lighting create powerful visual impact</li>
             <li><strong>Need large statement pieces:</strong> This image shines at 36x24" or larger, perfect for commanding wall spaces</li>
             <li><strong>Prefer warm color palettes:</strong> Rich golds, oranges, and deep blues dominate the composition</li>
-            <li><strong>Decorating spacious rooms:</strong> Best appreciated in rooms with 10+ foot ceilings and ample wall space</li>
-            <li><strong>Seeking nature-inspired calm:</strong> Creates a serene, contemplative atmosphere while maintaining visual drama</li>
+            <li><strong>Decorating spacious rooms:</strong> Best appreciated in rooms with ample wall space</li>
             <li><strong>Outfitting professional spaces:</strong> Universally appealing for offices, waiting rooms, and conference rooms</li>
           </ul>
         </div>
 
         <div class="fit-guidance-poor">
-          <h3>Consider different if you:</h3>
+          <h3>Consider a different print if you:</h3>
           <ul>
             <li><strong>Prefer minimalist aesthetics:</strong> This is a bold, dramatic piece with strong color and detail</li>
             <li><strong>Need small space art:</strong> While available in smaller sizes, the image is best appreciated larger</li>
             <li><strong>Want cool color schemes:</strong> Dominated by warm sunrise tones (golds, oranges, warm blues)</li>
-            <li><strong>Prefer abstract or modern:</strong> This is realistic landscape photography, not abstract interpretation</li>
+            <li><strong>Prefer abstract art:</strong> This is realistic landscape photography</li>
           </ul>
         </div>
       </section>
 
+      <!-- Specifications -->
       <section class="product-specs">
-        <h2>Product Specifications</h2>
+        <h2>Specifications</h2>
 
         <dl class="specs-list">
-          <dt>Available Formats:</dt>
-          <dd>Canvas Print, Framed Print, Metal Print, Fine Art Paper</dd>
+          <dt>Available Formats</dt>
+          <dd>Canvas Print, Framed Print, Metal Print</dd>
 
-          <dt>Sizes:</dt>
+          <dt>Sizes</dt>
           <dd>12x8", 18x12", 24x16", 36x24", 48x32", 60x40"</dd>
 
-          <dt>Orientation:</dt>
+          <dt>Orientation</dt>
           <dd>Horizontal (Landscape)</dd>
 
-          <dt>Dominant Colors:</dt>
-          <dd>Gold, Orange, Deep Blue, Warm Browns, Rose</dd>
+          <dt>Dominant Colors</dt>
+          <dd>Gold, Orange, Deep Blue, Warm Browns</dd>
 
-          <dt>Style:</dt>
+          <dt>Style</dt>
           <dd>Fine Art Landscape Photography</dd>
 
-          <dt>Subject:</dt>
+          <dt>Subject</dt>
           <dd>Rocky Mountains at Sunrise</dd>
 
-          <dt>Best For:</dt>
-          <dd>Living Room, Office, Bedroom, Waiting Room, Conference Room</dd>
-
-          <dt>Mood:</dt>
-          <dd>Inspiring, Serene, Contemplative, Majestic</dd>
+          <dt>Best For</dt>
+          <dd>Living Room, Office, Bedroom, Waiting Room</dd>
         </dl>
       </section>
 
-      <section class="product-description">
-        <h2>About This Photograph</h2>
-
-        <p>
-          Captured during a spectacular sunrise in the Rocky Mountains, this photograph
-          embodies the raw majesty of high-altitude landscapes. The golden hour light
-          bathes the distant peaks in warm, ethereal tones while layers of mountains
-          create depth and atmospheric perspective.
-        </p>
-
-        <p>
-          The composition balances the dramatic scale of the mountains with the intimate
-          warmth of sunrise colors, creating a piece that commands attention while
-          maintaining a sense of peace. This duality makes it equally at home in
-          professional spaces requiring gravitas and personal spaces seeking tranquility.
-        </p>
-
-        <h3>Technical Details</h3>
-        <p>
-          Shot with professional-grade equipment and meticulously edited to preserve
-          the authentic colors and atmosphere of the scene. Available in multiple
-          formats to suit your aesthetic and space requirements.
-        </p>
-      </section>
-
-      <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">What size should I choose for my space?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p>For this dramatic landscape, we recommend:</p>
-              <ul>
-                <li><strong>Living rooms and large spaces:</strong> 48x32" or 60x40" for maximum impact</li>
-                <li><strong>Offices and medium spaces:</strong> 36x24" or 48x32"</li>
-                <li><strong>Bedrooms and smaller walls:</strong> 24x16" or 36x24"</li>
-                <li><strong>Gallery walls or collections:</strong> 18x12" or 24x16"</li>
-              </ul>
-              <p>The print should occupy 50-75% of your available wall width for best visual balance.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">What's the difference between canvas and metal prints for this image?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p><strong>Canvas Print:</strong> Traditional fine art feel with subtle texture. The warm sunrise tones
-              have a classic, painterly quality on canvas. Best for traditional or transitional decor.</p>
-              <p><strong>Metal Print:</strong> Ultra-vibrant colors with exceptional sharpness and glossy finish.
-              The mountain details and sky gradients are breathtaking on metal. Best for modern or contemporary spaces.</p>
-              <p><strong>Framed Print:</strong> Fine art paper in professional frame offers gallery-quality presentation
-              with the most color accuracy. Best for classic or formal settings.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">Will this work in a room with cool color scheme?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p>
-                This image is dominated by warm tones (golds, oranges, warm blues) which can create
-                beautiful contrast in a cool-toned room. However, if you're seeking harmony rather than
-                contrast, consider our <a href="https://www.flickersofmajesty.com/categories/cool-tones/">Cool Tones Collection</a>
-                with images featuring blues, greens, and purples.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="related-products">
-        <h2>You May Also Like</h2>
+      <!-- Related Products -->
+      <section class="content-section">
+        <header class="section-header">
+          <h2 class="section-title">You May Also Like</h2>
+        </header>
 
         <div class="product-grid">
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/products/alpine-serenity/">
+            <a href="/products/alpine-serenity/">
               <div class="product-image">
-                <img src="https://via.placeholder.com/400x267/5a6a7a/ffffff?text=Alpine+Serenity"
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"
                      alt="Alpine Serenity fine art photograph"
-                     width="400" height="267"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
                 <h3>Alpine Serenity</h3>
                 <p class="product-description">Peaceful mountain lake at dawn</p>
-                <p class="price">From $49.00</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
 
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/products/summit-glow/">
+            <a href="/products/summit-glow/">
               <div class="product-image">
-                <img src="https://via.placeholder.com/400x267/6a5a4a/ffffff?text=Summit+Glow"
+                <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80"
                      alt="Summit Glow fine art photograph"
-                     width="400" height="267"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
                 <h3>Summit Glow</h3>
                 <p class="product-description">Sunset over distant peaks</p>
-                <p class="price">From $49.00</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
 
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/products/rugged-horizon/">
+            <a href="/products/rugged-horizon/">
               <div class="product-image">
-                <img src="https://via.placeholder.com/400x267/4a5a6a/ffffff?text=Rugged+Horizon"
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80"
                      alt="Rugged Horizon fine art photograph"
-                     width="400" height="267"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
                 <h3>Rugged Horizon</h3>
-                <p class="product-description">Rocky mountain ridge at twilight</p>
-                <p class="price">From $49.00</p>
+                <p class="product-description">Mountain ridge at twilight</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
         </div>
       </section>
+
     </div>
   </main>
 
-  <footer>
+  <!-- =========================
+       SITE FOOTER
+       ========================= -->
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Flickers of Majesty. All rights reserved.</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>Flickers of Majesty</strong>
+          <p class="footer-tagline">
+            "Small glimpses of eternal Majesty."<br>
+            Fine art photography prints that transform spaces.
+          </p>
+        </div>
+
+        <nav class="footer-nav-section">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="/collections/landscapes/">Landscapes</a></li>
+            <li><a href="/collections/maritime/">Maritime</a></li>
+            <li><a href="/collections/atmospheres/">Atmospheres</a></li>
+            <li><a href="/collections/">View All</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-section">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/prints/">Print Formats</a></li>
+            <li><a href="/sizing-guide/">Sizing Guide</a></li>
+            <li><a href="/shipping/">Shipping</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Flickers of Majesty. All rights reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What size should I choose for my space?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For this dramatic landscape: Living rooms and large spaces: 48x32 or 60x40. Offices and medium spaces: 36x24 or 48x32. Bedrooms and smaller walls: 24x16 or 36x24. The print should occupy 50-75% of your available wall width."
+  <!-- =========================
+       SCRIPTS
+       ========================= -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('is-open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
         }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between canvas and metal prints for this image?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Canvas prints offer traditional fine art feel with warm, painterly quality, best for traditional decor. Metal prints provide ultra-vibrant colors with exceptional sharpness, best for modern spaces. Framed prints on fine art paper offer gallery-quality presentation with most color accuracy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will this work in a room with cool color scheme?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This image is dominated by warm tones which can create beautiful contrast in cool-toned rooms. For harmony rather than contrast, consider our Cool Tones Collection."
-        }
+      });
+    }
+
+    // Product option selection
+    const formatButtons = document.querySelectorAll('.option-btn[data-format]');
+    const sizeSelect = document.getElementById('size-select');
+    const priceDisplay = document.getElementById('current-price');
+    const addToCartBtn = document.querySelector('.add-to-cart');
+
+    let selectedFormat = 'canvas';
+    let formatModifier = 0;
+
+    formatButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedFormat = btn.dataset.format;
+        formatModifier = parseInt(btn.dataset.priceModifier) || 0;
+        updatePrice();
+      });
+    });
+
+    if (sizeSelect) {
+      sizeSelect.addEventListener('change', updatePrice);
+    }
+
+    function updatePrice() {
+      if (!sizeSelect || !priceDisplay) return;
+      const basePrice = parseInt(sizeSelect.selectedOptions[0].dataset.price) || 49;
+      const total = basePrice + formatModifier;
+      priceDisplay.textContent = '$' + total;
+
+      // Update Snipcart button data (for when Snipcart is enabled)
+      if (addToCartBtn) {
+        addToCartBtn.setAttribute('data-item-price', total.toFixed(2));
       }
-    ]
-  }
+    }
   </script>
+
+  <!-- Snipcart - Uncomment when ready to enable commerce
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY"></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  -->
+
 </body>
 </html>

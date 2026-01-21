@@ -20,6 +20,11 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
   <!-- Styles -->
   <link rel="stylesheet" href="/css/main.css">
 
@@ -31,7 +36,7 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- =========================
-       SITE HEADER / NAV SHELL
+       SITE HEADER
        ========================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -50,184 +55,319 @@
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
+
+      <div class="header-actions">
+        <!-- Cart Button - Snipcart Ready -->
+        <button class="cart-button snipcart-checkout" aria-label="Shopping cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+          <span class="cart-count snipcart-items-count"></span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="/collections/">Collections</a></li>
+        <li><a href="/prints/">Print Formats</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <!-- =========================
+       HERO SECTION
+       ========================= -->
+  <section class="hero hero-full">
+    <div class="hero-image-container">
+      <!-- Replace with your hero image -->
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+           alt="Dramatic mountain landscape at golden hour"
+           class="hero-image"
+           fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Fine Art Photography That Transforms Spaces</h1>
+      <p class="hero-subtitle">
+        Museum-quality prints of landscapes, seascapes, and moments of majesty.
+        Available as canvas, framed, and metal prints.
+      </p>
+      <a href="/collections/" class="hero-cta">Explore Collections</a>
+    </div>
+  </section>
 
   <!-- =========================
        MAIN CONTENT
        ========================= -->
   <main id="main" class="site-main">
-    <div class="container">
- <main id="main">
-    <div class="container">
-      <section class="hero">
-        <h1>Fine Art Photography That Transforms Spaces</h1>
-        <p class="answer-line">
-          Museum-quality photography prints available as canvas, framed, and metal prints.
-          From dramatic mountain landscapes to serene coastal scenes, discover art that
-          brings majesty to your walls. Sizes from 12x8" to 60x40" for any space.
-        </p>
-      </section>
 
-      <section class="fit-guidance">
-        <h2>Welcome to Flickers of Majesty</h2>
+    <!-- Featured Collections -->
+    <section class="content-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Explore Our Collections</h2>
+          <p class="section-subtitle">
+            From dramatic mountain peaks to serene coastal scenes, discover photography
+            that brings majesty to your walls.
+          </p>
+        </header>
 
-        <div class="fit-guidance-good">
-          <h3>Our prints are perfect if you:</h3>
-          <ul>
-            <li><strong>Love nature and landscape photography:</strong> Dramatic mountains, peaceful coastlines, majestic forests</li>
-            <li><strong>Want museum-quality prints:</strong> Professional-grade materials and printing processes</li>
-            <li><strong>Need flexible sizing options:</strong> From intimate 12x8" prints to commanding 60x40" statement pieces</li>
-            <li><strong>Appreciate multiple format choices:</strong> Canvas for traditional warmth, metal for modern vibrancy, framed for classic elegance</li>
-            <li><strong>Value expert photography:</strong> Each image carefully composed, edited, and curated for visual impact</li>
-          </ul>
+        <div class="collections-grid">
+          <a href="/collections/landscapes/" class="collection-card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80"
+                 alt="Mountain landscape photography"
+                 loading="lazy"
+                 width="600" height="750">
+            <div class="collection-card-content">
+              <h3>Landscapes</h3>
+              <p>Mountains, valleys & vistas</p>
+            </div>
+          </a>
+
+          <a href="/collections/maritime/" class="collection-card">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80"
+                 alt="Maritime and ship photography"
+                 loading="lazy"
+                 width="600" height="750">
+            <div class="collection-card-content">
+              <h3>Maritime</h3>
+              <p>Ships, seas & harbors</p>
+            </div>
+          </a>
+
+          <a href="/collections/atmospheres/" class="collection-card">
+            <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&q=80"
+                 alt="Atmospheric photography - sunsets, storms, and dramatic light"
+                 loading="lazy"
+                 width="600" height="750">
+            <div class="collection-card-content">
+              <h3>Atmospheres</h3>
+              <p>Sunsets, storms & fleeting light</p>
+            </div>
+          </a>
+
+          <a href="/collections/" class="collection-card">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c036bc6c9d?w=600&q=80"
+                 alt="Browse all photography collections"
+                 loading="lazy"
+                 width="600" height="750">
+            <div class="collection-card-content">
+              <h3>View All</h3>
+              <p>Browse full collection</p>
+            </div>
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="fit-guidance-poor">
-          <h3>We might not be the best fit if you:</h3>
-          <ul>
-            <li><strong>Prefer illustrations or digital art:</strong> We specialize exclusively in fine art photography</li>
-            <li><strong>Need custom photography services:</strong> We offer prints of existing work, not commissioned photography</li>
-            <li><strong>Want poster-quality budget prints:</strong> Our focus is museum-quality materials and craftsmanship</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="featured-categories">
-        <h2>Explore Our Collections</h2>
+    <!-- Featured Prints -->
+    <section class="content-section content-section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Featured Prints</h2>
+          <p class="section-subtitle">
+            Our most beloved photographs, ready to transform your space.
+          </p>
+        </header>
 
         <div class="product-grid">
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/categories/mountain-landscapes/">
+            <a href="/products/mountain-majesty/">
               <div class="product-image">
-                <!-- Placeholder for category image -->
-                <img src="https://via.placeholder.com/400x267/4a5568/ffffff?text=Mountain+Landscapes"
-                     alt="Mountain landscape photography collection"
-                     width="400" height="267"
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+                     alt="Mountain Majesty fine art photograph"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
-                <h3>Mountain Landscapes</h3>
-                <p class="product-description">Dramatic peaks and alpine vistas</p>
+                <h3>Mountain Majesty</h3>
+                <p class="product-description">Rocky Mountains at sunrise</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
 
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/categories/coastal/">
+            <a href="/products/coastal-serenity/">
               <div class="product-image">
-                <img src="https://via.placeholder.com/400x267/4a90a4/ffffff?text=Coastal+Photography"
-                     alt="Coastal photography collection"
-                     width="400" height="267"
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80"
+                     alt="Coastal Serenity fine art photograph"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
-                <h3>Coastal Photography</h3>
-                <p class="product-description">Serene ocean scenes and shorelines</p>
+                <h3>Coastal Serenity</h3>
+                <p class="product-description">Ocean waves at twilight</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
 
           <article class="product-card">
-            <a href="https://www.flickersofmajesty.com/categories/abstract/">
+            <a href="/products/golden-hour/">
               <div class="product-image">
-                <img src="https://via.placeholder.com/400x267/8b5cf6/ffffff?text=Abstract+Fine+Art"
-                     alt="Abstract fine art photography collection"
-                     width="400" height="267"
+                <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800&q=80"
+                     alt="Golden Hour fine art photograph"
+                     width="800" height="533"
                      loading="lazy">
+                <div class="product-overlay">
+                  <span>View Print</span>
+                </div>
               </div>
               <div class="product-info">
-                <h3>Abstract Fine Art</h3>
-                <p class="product-description">Artistic interpretations and patterns</p>
+                <h3>Golden Hour</h3>
+                <p class="product-description">Dramatic sunset over the plains</p>
+                <p class="price"><span class="price-from">From</span> $49</p>
               </div>
             </a>
           </article>
         </div>
-      </section>
 
-      <section class="faq">
-        <h2>Frequently Asked Questions</h2>
+        <div class="text-center mt-2">
+          <a href="/prints/" class="btn btn-secondary">View All Prints</a>
+        </div>
+      </div>
+    </section>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">What print formats do you offer?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p>We offer three premium formats to suit different aesthetics and spaces:</p>
-              <ul>
-                <li><strong>Canvas Prints:</strong> Traditional fine art feel with textured surface, perfect for classic and transitional decor</li>
-                <li><strong>Metal Prints:</strong> Ultra-modern with vibrant colors and glossy finish, ideal for contemporary spaces</li>
-                <li><strong>Framed Prints:</strong> Fine art paper in professional frames, classic gallery presentation</li>
-              </ul>
-              <p>All formats use museum-quality materials and professional printing processes.</p>
-            </div>
+    <!-- About / Value Proposition -->
+    <section class="content-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Museum-Quality Craftsmanship</h2>
+          <p class="section-subtitle">
+            Every print is produced using professional-grade materials and processes,
+            ensuring your art looks stunning for generations.
+          </p>
+        </header>
+
+        <div class="product-grid">
+          <div class="text-center">
+            <h3>Canvas Prints</h3>
+            <p class="answer-line">Traditional fine art feel with rich texture. Gallery-wrapped on solid wood frames, ready to hang.</p>
+          </div>
+          <div class="text-center">
+            <h3>Metal Prints</h3>
+            <p class="answer-line">Ultra-vibrant colors with exceptional sharpness. Modern, sleek presentation that makes colors pop.</p>
+          </div>
+          <div class="text-center">
+            <h3>Framed Prints</h3>
+            <p class="answer-line">Fine art paper in professional frames. Classic gallery presentation with archival materials.</p>
           </div>
         </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">How do I choose the right size for my space?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p>For best visual impact, the print should occupy 50-75% of your available wall width:</p>
-              <ul>
-                <li><strong>Small walls (4-6 feet wide):</strong> 24x16" or 36x24"</li>
-                <li><strong>Medium walls (6-8 feet wide):</strong> 36x24" or 48x32"</li>
-                <li><strong>Large walls (8+ feet wide):</strong> 48x32" or 60x40"</li>
-                <li><strong>Above furniture:</strong> Print should be approximately 2/3 the width of the furniture below</li>
-              </ul>
-              <p>Each product page includes detailed sizing guidance specific to that image.</p>
-            </div>
-          </div>
+        <div class="text-center mt-2">
+          <a href="/prints/" class="btn btn-primary">Learn About Our Prints</a>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">Do you offer a satisfaction guarantee?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p>Yes! We stand behind the quality of our prints. If you're not completely satisfied with your purchase,
-              you may return it within 30 days for a full refund. We want you to love the art in your space.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-    </div>
   </main>
 
   <!-- =========================
        SITE FOOTER
        ========================= -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <strong>Flickers of Majesty</strong>
-        <p class="footer-note">
-          Small glimpses of eternal Majesty.
-        </p>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>Flickers of Majesty</strong>
+          <p class="footer-tagline">
+            "Small glimpses of eternal Majesty."<br>
+            Fine art photography prints that transform spaces.
+          </p>
+        </div>
+
+        <nav class="footer-nav-section">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="/collections/landscapes/">Landscapes</a></li>
+            <li><a href="/collections/maritime/">Maritime</a></li>
+            <li><a href="/collections/atmospheres/">Atmospheres</a></li>
+            <li><a href="/collections/">View All</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-section">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/prints/">Print Formats</a></li>
+            <li><a href="/sizing-guide/">Sizing Guide</a></li>
+            <li><a href="/shipping/">Shipping</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <ul>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Flickers of Majesty. All rights reserved.</p>
+        <ul class="footer-legal">
           <li><a href="/privacy/">Privacy</a></li>
           <li><a href="/terms/">Terms</a></li>
         </ul>
-      </nav>
-
-      <p class="copyright">
-        &copy; 2025 Flickers of Majesty. All rights reserved.
-      </p>
+      </div>
     </div>
   </footer>
 
   <!-- =========================
-       FUTURE SLOTS
+       SCRIPTS
        ========================= -->
-  <!-- Analytics mount -->
-  <!-- Commerce SDK mount -->
-  <!-- Search index mount -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('is-open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+  </script>
+
+  <!-- Snipcart - Uncomment when ready to enable commerce
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY"></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  -->
 
 </body>
 </html>

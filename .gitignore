@@ -1,0 +1,15 @@
+# Cache directories
+.claude/tsc-cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (if used later)
+node_modules/
