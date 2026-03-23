@@ -23,6 +23,16 @@ This repository has access to the multi-LLM orchestrator system. External models
 - **Orchestrator:** `/home/user/ken/orchestrator/`
 - **Note:** Uses cruising pipeline for web content generation; may evolve into a custom `photography` mode
 
+### First-Time Setup (Per Session)
+
+Before first use of `/consult` or `/orchestrate` in a session, install dependencies:
+
+```bash
+pip3 install -q -r /home/user/ken/orchestrator/requirements.txt
+```
+
+This is silent when already installed. If `/consult` or `/orchestrate` fails with `ModuleNotFoundError`, run this command first.
+
 ### Context Boundaries
 - **SEND:** Page requirements, content topics, SEO targets, product descriptions
 - **NEVER SEND:** Full codebase, internal standards docs, analytics, financial data
