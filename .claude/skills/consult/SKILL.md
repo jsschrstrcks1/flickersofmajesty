@@ -49,6 +49,9 @@ python3 /home/user/ken/orchestrator/consult.py <model> <role> "prompt text"
 **Output:** JSON response to stdout with keys: `analysis`, `proposed_update`, `risks`, `confidence`
 **Usage stats:** Printed to stderr (model, tokens, cost)
 
+**If the backend is not found:** Tell the user:
+> "The orchestrator backend isn't installed on this machine. It lives in the `ken` repository at `orchestrator/`. Make sure the ken repo is cloned to `/home/user/ken/`."
+
 ---
 
 ## Context Boundaries
