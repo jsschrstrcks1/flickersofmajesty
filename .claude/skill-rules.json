@@ -1,306 +1,354 @@
 {
-    "version": "1.0",
-    "description": "Skill activation triggers for Flickers of Majesty photography e-commerce site. Controls when skills automatically suggest or block actions.",
-    "skills": {
-        "orchestrate": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Full multi-LLM pipeline orchestration. Runs the cruising pipeline coordinating GPT, Gemini, and Grok as consultants while Claude remains lead developer.",
-            "promptTriggers": {
-                "keywords": ["orchestrate", "pipeline", "multi-model", "multi-llm", "full pipeline", "run pipeline"],
-                "intentPatterns": ["(orchestrate|run pipeline|full pipeline).*?(page|content|gallery)", "(coordinate|consult).*?(multiple|all).*?model"]
-            },
-            "autoLoad": {
-                "mainFile": ".claude/skills/orchestrate/SKILL.md",
-                "maxLines": 200,
-                "loadOnFirstFileEdit": false
-            },
-            "activationMessage": "Orchestrator active. Claude leads — external models consult."
-        },
-        "consult": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Quick multi-LLM second opinion. Sends a single prompt to GPT, Gemini, or Grok with a role-based system prompt and returns structured feedback.",
-            "promptTriggers": {
-                "keywords": ["consult", "second opinion", "ask gpt", "ask gemini", "ask grok", "challenge this", "expand this", "get feedback"],
-                "intentPatterns": ["(consult|ask|query).*?(gpt|gemini|grok)", "(second opinion|outside perspective|another model)"]
-            },
-            "autoLoad": {
-                "mainFile": ".claude/skills/consult/SKILL.md",
-                "maxLines": 100,
-                "loadOnFirstFileEdit": false
-            },
-            "activationMessage": "Consultation ready. One model, one question, structured feedback."
-        },
-        "skill-developer": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Meta-skill for creating and managing Claude Code skills",
-            "promptTriggers": {
-                "keywords": [
-                    "skill system",
-                    "create skill",
-                    "add skill",
-                    "skill triggers",
-                    "skill rules",
-                    "hook system",
-                    "skill development",
-                    "skill-rules.json"
-                ],
-                "intentPatterns": [
-                    "(how do|how does|explain).*?skill",
-                    "(create|add|modify|build).*?skill",
-                    "skill.*?(work|trigger|activate|system)"
-                ]
-            }
-        },
-        "frontend-dev-guidelines": {
-            "type": "guardrail",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "HTML/CSS/JavaScript best practices for static photography site",
-            "promptTriggers": {
-                "keywords": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "page",
-                    "layout",
-                    "styling",
-                    "responsive",
-                    "mobile-first",
-                    "accessibility",
-                    "WCAG",
-                    "semantic HTML"
-                ],
-                "intentPatterns": [
-                    "(create|add|make|build|update|modify|edit).*?(page|HTML|CSS|layout)",
-                    "(how to|best practice).*?(HTML|CSS|accessibility)",
-                    "(style|design|layout).*?(page|component)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "*.html",
-                    "**/*.html",
-                    "css/*.css",
-                    "**/*.css",
-                    "js/*.js",
-                    "**/*.js"
-                ],
-                "contentPatterns": [
-                    "<html",
-                    "<!DOCTYPE",
-                    "@media",
-                    "var\\(--"
-                ]
-            }
-        },
-        "seo-optimizer": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "SEO optimization that SUPPORTS FOM-Lite philosophy: AI-first, Human-first, Google second. Focuses on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. MUST NOT suggest keyword stuffing, readability compromises, or removal of AI-helpful elements.",
-            "guardrails": {
-                "must_reject": [
-                    "Keyword stuffing or unnatural keyword density",
-                    "Compromising human readability for SEO",
-                    "Removing or discouraging AI-first meta tags (ai:summary, ai:*, etc)",
-                    "Hidden text or deceptive practices",
-                    "Sacrificing UX for search ranking"
-                ],
-                "must_accept": [
-                    "Schema.org structured data (Product, Offer, Organization, etc)",
-                    "Semantic HTML that helps AI comprehension AND accessibility",
-                    "Descriptive, natural meta descriptions",
-                    "Meaningful alt text for accessibility AND SEO",
-                    "OpenGraph tags for social sharing"
-                ],
-                "philosophy": "Technical SEO that serves all three audiences: AI understanding, human experience, search discoverability"
-            },
-            "promptTriggers": {
-                "keywords": [
-                    "SEO",
-                    "meta tags",
-                    "metadata",
-                    "schema.org",
-                    "structured data",
-                    "OpenGraph",
-                    "og:image",
-                    "title tag",
-                    "description",
-                    "canonical",
-                    "sitemap",
-                    "robots.txt"
-                ],
-                "intentPatterns": [
-                    "(add|create|optimize|improve).*?(SEO|metadata|schema)",
-                    "(how to|best practice).*?(SEO|meta tags|structured data)",
-                    "optimize.*?(search|ranking|visibility)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "*.html",
-                    "products/**/*.html",
-                    "categories/**/*.html"
-                ],
-                "contentPatterns": [
-                    "<meta name=",
-                    "schema.org",
-                    "application/ld\\+json",
-                    "og:"
-                ]
-            }
-        },
-        "accessibility-auditor": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Web accessibility compliance (WCAG AA)",
-            "promptTriggers": {
-                "keywords": [
-                    "accessibility",
-                    "a11y",
-                    "WCAG",
-                    "aria",
-                    "alt text",
-                    "screen reader",
-                    "keyboard navigation",
-                    "color contrast",
-                    "semantic HTML"
-                ],
-                "intentPatterns": [
-                    "(check|audit|verify|test).*?(accessibility|a11y|WCAG)",
-                    "(add|improve).*?(alt text|aria|accessibility)",
-                    "(how to|best practice).*?(accessibility|WCAG)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "*.html",
-                    "**/*.html"
-                ],
-                "contentPatterns": [
-                    "<img",
-                    "aria-",
-                    "role=",
-                    "<button",
-                    "<a "
-                ]
-            }
-        },
-        "content-strategy": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "high",
-            "description": "Content strategy for product descriptions and photography storytelling aligned with FOM-Lite philosophy. Prioritizes authentic, natural language that serves humans first while maintaining AI comprehension. Storytelling over sales-speak.",
-            "guardrails": {
-                "must_reject": [
-                    "Keyword-stuffed product descriptions",
-                    "Unnatural, robotic copy optimized only for search",
-                    "Removing fit-guidance sections for brevity",
-                    "Generic, template-based descriptions",
-                    "Sales-heavy language that sacrifices authenticity"
-                ],
-                "must_accept": [
-                    "Natural, conversational product descriptions",
-                    "Photography storytelling that connects emotionally",
-                    "Fit-guidance sections that help buyers make decisions",
-                    "Authentic voice that prioritizes human reader",
-                    "Structured content that AI can parse (headings, lists, schema)"
-                ],
-                "philosophy": "Write for humans first. Make AI comprehension easy through structure, not through robotic language. Tell stories, don't just list features."
-            },
-            "promptTriggers": {
-                "keywords": [
-                    "content",
-                    "product description",
-                    "photography",
-                    "storytelling",
-                    "copywriting",
-                    "product copy",
-                    "category description",
-                    "fit-guidance"
-                ],
-                "intentPatterns": [
-                    "(write|create|improve).*?(description|content|copy)",
-                    "(how to|best practice).*?(product description|copywriting)",
-                    "content.*?(strategy|planning|creation)"
-                ]
-            },
-            "fileTriggers": {
-                "pathPatterns": [
-                    "products/**/*.html",
-                    "categories/**/*.html",
-                    "index.html"
-                ],
-                "contentPatterns": [
-                    "class=\"product-description\"",
-                    "class=\"fit-guidance\"",
-                    "<meta name=\"ai:summary\""
-                ]
-            }
-        },
-        "performance-analyzer": {
-            "type": "domain",
-            "enforcement": "suggest",
-            "priority": "medium",
-            "description": "Web performance optimization (Core Web Vitals, Lighthouse)",
-            "promptTriggers": {
-                "keywords": [
-                    "performance",
-                    "optimize",
-                    "lighthouse",
-                    "core web vitals",
-                    "LCP",
-                    "FID",
-                    "CLS",
-                    "page speed",
-                    "loading time",
-                    "image optimization"
-                ],
-                "intentPatterns": [
-                    "(optimize|improve|test).*?(performance|speed|loading)",
-                    "(how to|best practice).*?(performance|optimization)",
-                    "lighthouse.*?(score|audit)"
-                ]
-            }
-        }
+  "version": "1.0",
+  "description": "Skill activation triggers for Flickers of Majesty photography e-commerce site. Controls when skills automatically suggest or block actions.",
+  "skills": {
+    "orchestrate": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Full multi-LLM pipeline orchestration. Runs the cruising pipeline coordinating GPT, Gemini, and Grok as consultants while Claude remains lead developer.",
+      "promptTriggers": {
+        "keywords": [
+          "orchestrate",
+          "pipeline",
+          "multi-model",
+          "multi-llm",
+          "full pipeline",
+          "run pipeline"
+        ],
+        "intentPatterns": [
+          "(orchestrate|run pipeline|full pipeline).*?(page|content|gallery)",
+          "(coordinate|consult).*?(multiple|all).*?model"
+        ]
+      },
+      "autoLoad": {
+        "mainFile": ".claude/skills/orchestrate/SKILL.md",
+        "maxLines": 200,
+        "loadOnFirstFileEdit": false
+      },
+      "activationMessage": "Orchestrator active. Claude leads \u2014 external models consult."
     },
-    "notes": {
-        "enforcement_types": {
-            "suggest": "Skill suggestion appears but doesn't block execution",
-            "block": "Requires skill to be used before proceeding (guardrail)",
-            "warn": "Shows warning but allows proceeding"
-        },
-        "priority_levels": {
-            "critical": "Highest - Always trigger when matched",
-            "high": "Important - Trigger for most matches",
-            "medium": "Moderate - Trigger for clear matches",
-            "low": "Optional - Trigger only for explicit matches"
-        },
-        "customization": {
-            "project": "Flickers of Majesty - Photography e-commerce site",
-            "focus": "Static HTML, SEO, accessibility, performance, content strategy",
-            "protocol": "FOM-Lite v1.0 (AI-first, human-first content protocol)"
-        },
-        "fom_lite_philosophy": {
-            "priority_order": [
-                "1. AI-First: Structure content so AI can accurately understand",
-                "2. Human-First: NEVER compromise user experience",
-                "3. Google Second: SEO is tertiary, not primary"
-            ],
-            "guardrail_principles": {
-                "seo": "SEO skills must focus on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. Reject keyword stuffing, readability compromises, or removal of AI-helpful elements.",
-                "content": "Content skills must prioritize authentic, natural language for humans while maintaining AI comprehension through structure. Reject robotic, keyword-optimized copy.",
-                "accessibility": "Accessibility benefits all audiences (humans, AI, assistive tech, search engines). Always prioritize.",
-                "performance": "Performance improves human experience and supports all other goals. Always prioritize."
-            },
-            "skill_filtering": "All skill suggestions must pass through FOM-Lite lens: Does it help AI? Does it maintain/improve human experience? Does it happen to help SEO? (Bonus!) Does it sacrifice human/AI for SEO? (Reject!)"
-        }
+    "consult": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Quick multi-LLM second opinion. Sends a single prompt to GPT, Gemini, or Grok with a role-based system prompt and returns structured feedback.",
+      "promptTriggers": {
+        "keywords": [
+          "consult",
+          "second opinion",
+          "ask gpt",
+          "ask gemini",
+          "ask grok",
+          "challenge this",
+          "expand this",
+          "get feedback"
+        ],
+        "intentPatterns": [
+          "(consult|ask|query).*?(gpt|gemini|grok)",
+          "(second opinion|outside perspective|another model)"
+        ]
+      },
+      "autoLoad": {
+        "mainFile": ".claude/skills/consult/SKILL.md",
+        "maxLines": 100,
+        "loadOnFirstFileEdit": false
+      },
+      "activationMessage": "Consultation ready. One model, one question, structured feedback."
+    },
+    "skill-developer": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Meta-skill for creating and managing Claude Code skills",
+      "promptTriggers": {
+        "keywords": [
+          "skill system",
+          "create skill",
+          "add skill",
+          "skill triggers",
+          "skill rules",
+          "hook system",
+          "skill development",
+          "skill-rules.json"
+        ],
+        "intentPatterns": [
+          "(how do|how does|explain).*?skill",
+          "(create|add|modify|build).*?skill",
+          "skill.*?(work|trigger|activate|system)"
+        ]
+      }
+    },
+    "frontend-dev-guidelines": {
+      "type": "guardrail",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "HTML/CSS/JavaScript best practices for static photography site",
+      "promptTriggers": {
+        "keywords": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "page",
+          "layout",
+          "styling",
+          "responsive",
+          "mobile-first",
+          "accessibility",
+          "WCAG",
+          "semantic HTML"
+        ],
+        "intentPatterns": [
+          "(create|add|make|build|update|modify|edit).*?(page|HTML|CSS|layout)",
+          "(how to|best practice).*?(HTML|CSS|accessibility)",
+          "(style|design|layout).*?(page|component)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "*.html",
+          "**/*.html",
+          "css/*.css",
+          "**/*.css",
+          "js/*.js",
+          "**/*.js"
+        ],
+        "contentPatterns": [
+          "<html",
+          "<!DOCTYPE",
+          "@media",
+          "var\\(--"
+        ]
+      }
+    },
+    "seo-optimizer": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "DEPRECATED \u2014 superseded by ICP-2. SEO optimization that SUPPORTS FOM-Lite philosophy: AI-first, Human-first, Google second. Focuses on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. MUST NOT suggest keyword stuffing, readability compromises, or removal of AI-helpful elements.",
+      "guardrails": {
+        "must_reject": [
+          "Keyword stuffing or unnatural keyword density",
+          "Compromising human readability for SEO",
+          "Removing or discouraging AI-first meta tags (ai:summary, ai:*, etc)",
+          "Hidden text or deceptive practices",
+          "Sacrificing UX for search ranking"
+        ],
+        "must_accept": [
+          "Schema.org structured data (Product, Offer, Organization, etc)",
+          "Semantic HTML that helps AI comprehension AND accessibility",
+          "Descriptive, natural meta descriptions",
+          "Meaningful alt text for accessibility AND SEO",
+          "OpenGraph tags for social sharing"
+        ],
+        "philosophy": "Technical SEO that serves all three audiences: AI understanding, human experience, search discoverability"
+      },
+      "promptTriggers": {
+        "keywords": [
+          "SEO",
+          "meta tags",
+          "metadata",
+          "schema.org",
+          "structured data",
+          "OpenGraph",
+          "og:image",
+          "title tag",
+          "description",
+          "canonical",
+          "sitemap",
+          "robots.txt"
+        ],
+        "intentPatterns": [
+          "(add|create|optimize|improve).*?(SEO|metadata|schema)",
+          "(how to|best practice).*?(SEO|meta tags|structured data)",
+          "optimize.*?(search|ranking|visibility)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "*.html",
+          "products/**/*.html",
+          "categories/**/*.html"
+        ],
+        "contentPatterns": [
+          "<meta name=",
+          "schema.org",
+          "application/ld\\+json",
+          "og:"
+        ]
+      },
+      "enabled": false
+    },
+    "accessibility-auditor": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Web accessibility compliance (WCAG AA)",
+      "promptTriggers": {
+        "keywords": [
+          "accessibility",
+          "a11y",
+          "WCAG",
+          "aria",
+          "alt text",
+          "screen reader",
+          "keyboard navigation",
+          "color contrast",
+          "semantic HTML"
+        ],
+        "intentPatterns": [
+          "(check|audit|verify|test).*?(accessibility|a11y|WCAG)",
+          "(add|improve).*?(alt text|aria|accessibility)",
+          "(how to|best practice).*?(accessibility|WCAG)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "*.html",
+          "**/*.html"
+        ],
+        "contentPatterns": [
+          "<img",
+          "aria-",
+          "role=",
+          "<button",
+          "<a "
+        ]
+      }
+    },
+    "content-strategy": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Content strategy for product descriptions and photography storytelling aligned with FOM-Lite philosophy. Prioritizes authentic, natural language that serves humans first while maintaining AI comprehension. Storytelling over sales-speak.",
+      "guardrails": {
+        "must_reject": [
+          "Keyword-stuffed product descriptions",
+          "Unnatural, robotic copy optimized only for search",
+          "Removing fit-guidance sections for brevity",
+          "Generic, template-based descriptions",
+          "Sales-heavy language that sacrifices authenticity"
+        ],
+        "must_accept": [
+          "Natural, conversational product descriptions",
+          "Photography storytelling that connects emotionally",
+          "Fit-guidance sections that help buyers make decisions",
+          "Authentic voice that prioritizes human reader",
+          "Structured content that AI can parse (headings, lists, schema)"
+        ],
+        "philosophy": "Write for humans first. Make AI comprehension easy through structure, not through robotic language. Tell stories, don't just list features."
+      },
+      "promptTriggers": {
+        "keywords": [
+          "content",
+          "product description",
+          "photography",
+          "storytelling",
+          "copywriting",
+          "product copy",
+          "category description",
+          "fit-guidance"
+        ],
+        "intentPatterns": [
+          "(write|create|improve).*?(description|content|copy)",
+          "(how to|best practice).*?(product description|copywriting)",
+          "content.*?(strategy|planning|creation)"
+        ]
+      },
+      "fileTriggers": {
+        "pathPatterns": [
+          "products/**/*.html",
+          "categories/**/*.html",
+          "index.html"
+        ],
+        "contentPatterns": [
+          "class=\"product-description\"",
+          "class=\"fit-guidance\"",
+          "<meta name=\"ai:summary\""
+        ]
+      }
+    },
+    "performance-analyzer": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "Web performance optimization (Core Web Vitals, Lighthouse)",
+      "promptTriggers": {
+        "keywords": [
+          "performance",
+          "optimize",
+          "lighthouse",
+          "core web vitals",
+          "LCP",
+          "FID",
+          "CLS",
+          "page speed",
+          "loading time",
+          "image optimization"
+        ],
+        "intentPatterns": [
+          "(optimize|improve|test).*?(performance|speed|loading)",
+          "(how to|best practice).*?(performance|optimization)",
+          "lighthouse.*?(score|audit)"
+        ]
+      }
+    },
+    "icp-2": {
+      "enabled": true,
+      "type": "guardrail",
+      "enforcement": "block",
+      "priority": "critical",
+      "description": "ICP-2 \u2014 Human-First SEO & AEO standard for 2026. Supersedes ICP-Lite v1.4 and seo-optimizer. Blocks HTML edits that don't meet ICP-2 compliance.",
+      "fileTriggers": {
+        "pathPatterns": [
+          "*.html",
+          "**/*.html"
+        ],
+        "exclude": [
+          "node_modules/**",
+          ".git/**",
+          "dist/**",
+          "build/**"
+        ]
+      },
+      "autoLoad": {
+        "mainFile": ".claude/skills/icp-2/SKILL.md",
+        "maxLines": 500,
+        "loadOnFirstFileEdit": true
+      },
+      "activationMessage": "ICP-2 guardrail active. HTML edits will be validated for SEO/AEO compliance. Non-compliance is a blocking error."
     }
+  },
+  "notes": {
+    "enforcement_types": {
+      "suggest": "Skill suggestion appears but doesn't block execution",
+      "block": "Requires skill to be used before proceeding (guardrail)",
+      "warn": "Shows warning but allows proceeding"
+    },
+    "priority_levels": {
+      "critical": "Highest - Always trigger when matched",
+      "high": "Important - Trigger for most matches",
+      "medium": "Moderate - Trigger for clear matches",
+      "low": "Optional - Trigger only for explicit matches"
+    },
+    "customization": {
+      "project": "Flickers of Majesty - Photography e-commerce site",
+      "focus": "Static HTML, SEO, accessibility, performance, content strategy",
+      "protocol": "FOM-Lite v1.0 (AI-first, human-first content protocol)"
+    },
+    "fom_lite_philosophy": {
+      "priority_order": [
+        "1. AI-First: Structure content so AI can accurately understand",
+        "2. Human-First: NEVER compromise user experience",
+        "3. Google Second: SEO is tertiary, not primary"
+      ],
+      "guardrail_principles": {
+        "seo": "SEO skills must focus on technical SEO (schema.org, semantic HTML, meta tags) that benefits AI + humans + search engines simultaneously. Reject keyword stuffing, readability compromises, or removal of AI-helpful elements.",
+        "content": "Content skills must prioritize authentic, natural language for humans while maintaining AI comprehension through structure. Reject robotic, keyword-optimized copy.",
+        "accessibility": "Accessibility benefits all audiences (humans, AI, assistive tech, search engines). Always prioritize.",
+        "performance": "Performance improves human experience and supports all other goals. Always prioritize."
+      },
+      "skill_filtering": "All skill suggestions must pass through FOM-Lite lens: Does it help AI? Does it maintain/improve human experience? Does it happen to help SEO? (Bonus!) Does it sacrifice human/AI for SEO? (Reject!)"
+    }
+  }
 }
