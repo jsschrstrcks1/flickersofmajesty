@@ -4,6 +4,16 @@
 
 ---
 
+## Skills
+
+Full skill catalog (25 skills) is documented in [`SKILLS.md`](SKILLS.md) — human-facing index with activation modes, trigger keywords, and example prompts.
+
+**Read SKILLS.md at session start.** It documents the photography-domain quality-gate skills (`pre-publish-checklist`, `accessibility-audit`, `seo-schema-audit`, `link-integrity`, `print-lab-validator`, `publication-proofreader`), the voice skills (`like-a-human`, `voice-audit`, `voice-dna`, `audience-profiles`, `emotional-hook-test`), and the frontend / operations skills.
+
+**The pre-publish-checklist is the unified ship-it gate** — invoke it before any deploy.
+
+---
+
 ## Multi-LLM Integration
 
 This repository has access to the multi-LLM orchestrator system. External models (GPT, Gemini, Grok) serve as **consultants only** — Claude remains lead author and decision-maker.
