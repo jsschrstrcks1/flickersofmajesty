@@ -2,6 +2,8 @@
 name: session-checkpoint
 description: "Enforces atomic commits, checkpoint summaries, rate-limit recovery, and safe resume patterns. Writes session pulses + cognitive memory so interrupted sessions can restart cleanly."
 version: 2.0.0
+description: "Enforces atomic commits, checkpoint summaries, rate-limit recovery, and safe resume patterns. Writes session state to cognitive-memory so interrupted sessions can restart cleanly."
+version: 1.0.0
 ---
 
 # Session Checkpoint
@@ -53,6 +55,25 @@ python3 /home/user/ken/orchestrator/memory_ops.py encode ken insight \
 
 ```bash
 python3 /home/user/ken/orchestrator/memory_ops.py recall "session checkpoint" --domain flickersofmajesty --limit 5
+Claude Code makes multiple API calls per step. Large files + multi-file edits can exhaust per-minute token budgets. When a rate limit fires mid-session, work-in-progress can be lost. This skill prevents that.
+
+## Session Startup Protocol
+
+### 1. Identify the single target file
+Do not load all files simultaneously. Load only what the task requires.
+
+### 2. Write a session intent to memory
+
+```bash
+python3 /home/user/ken/orchestrator/memory_ops.py encode photography insight \
+  "Session intent: [task description]. Target: [files]. Expected: [outcome]." \
+  --tags session,intent,checkpoint
+```
+
+### 3. Recall prior session state
+
+```bash
+python3 /home/user/ken/orchestrator/memory_ops.py recall "session checkpoint" --domain photography --limit 5
 ```
 
 ## Checkpoint Protocol (During Work)
@@ -70,12 +91,17 @@ python3 /home/user/ken/orchestrator/checkpoint.py beat \
 
 ```bash
 python3 /home/user/ken/orchestrator/memory_ops.py encode ken insight \
+After every logical unit of work, encode to memory:
+
+```bash
+python3 /home/user/ken/orchestrator/memory_ops.py encode photography insight \
   "Checkpoint [N]: Edited [file]. Changed [what]. Still needs [remaining]. Risks: [any]." \
   --tags session,checkpoint
 ```
 
 ### When to checkpoint
 
+### When to checkpoint:
 - After completing a function or block edit
 - Before switching to a second file
 - Before any find-and-replace touching multiple locations
@@ -107,6 +133,20 @@ When you see `Rate limit reached` or HTTP 429:
    ```bash
    python3 /home/user/ken/orchestrator/memory_ops.py recall "rate limit recovery" --domain flickersofmajesty --limit 3
    ```
+2. **Encode recovery state to memory:**
+
+```bash
+python3 /home/user/ken/orchestrator/memory_ops.py encode photography decision \
+  "RATE LIMIT RECOVERY: Interrupted at [step]. File: [name]. Last clean: [state]. Next step: [action]. Do NOT: [incomplete work]." \
+  --tags session,recovery,rate-limit --protected
+```
+
+3. **Wait 60 seconds** for per-minute limits to reset.
+4. **On resume**, recall the recovery memory first:
+
+```bash
+python3 /home/user/ken/orchestrator/memory_ops.py recall "rate limit recovery" --domain photography --limit 3
+```
 
 ## Atomic Commit Rules
 
@@ -166,3 +206,7 @@ Stale archive: `<repo>/.claude/state/stale-sessions/<utc-timestamp>-<session-id>
 | `checkpoint.py scan [--stale-minutes N] [--json]` | If pulse is stale-and-not-complete, archive it and print recovery summary. |
 | `checkpoint.py recover [--json]` | Print recovery summary for the latest pulse. |
 | `checkpoint.py complete [--session ID]` | Mark current pulse complete (graceful end). |
+1. Encode final checkpoint to memory (protected)
+2. List deferred issues in a separate memory
+3. Confirm all touched files are consistent
+

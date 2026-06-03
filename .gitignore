@@ -13,3 +13,8 @@ Thumbs.db
 
 # Node modules (if used later)
 node_modules/
+
+# API keys
+.env
+.env.*
+!.env.example
