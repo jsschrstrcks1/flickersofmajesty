@@ -93,6 +93,20 @@ This voice uses: "And then." / "But —" / "Look closer." / "What you don't see:
 
 This voice has been behind the camera. It knows what it saw. It says so.
 
+### Therapeutic and Cognitive Verbs
+
+Self-help/consultant verbs used abstractly: *process, calibrate, reframe, optimize, integrate, install.* (*unpack, curate, leverage, streamline, harness* are already on the AI Vocabulary Ban List above.) Replace with the plain word: "process the emotion of the image" → "what the image does to you," "reframe how you see it" → "look again."
+
+**Photography carve-out (matters here):** these are literal craft terms in this domain — you *frame* and *reframe* a shot, *process* a negative or a RAW file, *calibrate* a monitor or a print profile. Those stay. Flag only the abstract self-help use, where the word is doing TED-talk work instead of darkroom work.
+
+### Stock Demographic Listicles
+
+The four-part buyer/collector stack — "Some collectors want a statement piece. Some want an investment. Some want a memory of a place. Some want…" — is AI gesturing at market segments, not writing about a photograph. Name the one viewer this piece is for, or cut to a single concrete clause. (audience-profiles holds the real personas; the prose should not recite them as a listicle.)
+
+### Composite First-Person Attestation
+
+"I shot this at dawn." "I was there when the light broke." The voice's authority comes from having been behind the camera (see Anti-Camouflage Rule) — but a first-person claim with no specific (no place, no month, no f-stop, no what-happened-just-before) is the *unsubstantiated* version of that authority, and the eye feels it. Earn it with the one detail only the photographer would know, or report the image without the claim. The half-measure — "I think I was somewhere on the coast that morning" — is worse than either.
+
 ---
 
 ## Precision Discipline
