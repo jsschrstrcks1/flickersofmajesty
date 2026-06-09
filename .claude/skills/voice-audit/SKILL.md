@@ -55,6 +55,9 @@ Run this scan against any content written or edited with AI assistance.
 - [ ] Correct but bloodless: subject identified, technique noted, but no one who took the shot would recognize the description
 - [ ] No rough edges: every paragraph resolves cleanly
 - [ ] Generic beauty language where specific visual observation belongs
+- [ ] Therapeutic/cognitive verbs used abstractly. Grep: `\b(process|calibrate|reframe|optimize|integrate|install)\b`. **Photography carve-out:** keep the literal craft sense (frame/reframe a shot, process a negative/RAW, calibrate a monitor); flag the self-help use ("process the emotion" → "what it does to you").
+- [ ] Stock demographic listicle — four-part "Some collectors want…" buyer stack. Name the one viewer the piece serves, or cut to a single concrete clause. (Personas belong in audience-profiles, not recited as a listicle.)
+- [ ] Composite first-person attestation — "I shot this at dawn" / "I was there" with no place, month, f-stop, or what-happened-just-before. Earn the claim with the one photographer-only detail, or report the image without it; the vague half-measure is worst.
 
 ### Seam detection
 
