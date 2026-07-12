@@ -2,6 +2,28 @@
 
 **Soli Deo Gloria.** Fine art photography e-commerce site with FOM-Lite Protocol.
 
+**Household SSOT:** `/Users/kenbaker/ocs-work` (in containers: `/home/user/open-claw-stuff`)
+
+## Read order (mandatory)
+
+| # | Layer | Load |
+|---|-------|------|
+| 1 | **Soli Deo Gloria** | `/Users/kenbaker/ocs-work/skills/soli-deo-gloria/SKILL.md` |
+| 2 | **Careful, not clever** | `/Users/kenbaker/ocs-work/skills/careful-not-clever/SKILL.md` |
+| 3 | **Sophos OS** | `/Users/kenbaker/ocs-work/docs/SOPHOS-OPERATING-SYSTEM.md` |
+| 4 | **Cognitive memory** | `ken/orchestrator/memory_ops.py`; `/Users/kenbaker/ocs-work/admin/recall-memory.mjs` |
+| 5 | **Household rulebook** | `/Users/kenbaker/ocs-work/docs/HOUSEHOLD-AGENT-RULEBOOK.md` |
+| 6 | **Household library** | `/Users/kenbaker/ocs-work/skills/household-library/SKILL.md` |
+
+**Do not skip to §5–6 without §1–4.** Synced copies of §1–2 live in this repo's
+`.claude/skills/`; the canonical repo above is the source of truth.
+
+### User task gates (P0)
+
+```bash
+node /Users/kenbaker/ocs-work/admin/library.mjs preflight --query "<task>" --patron claude-code --merge --repo flickersofmajesty
+```
+
 ---
 
 ## Skills
