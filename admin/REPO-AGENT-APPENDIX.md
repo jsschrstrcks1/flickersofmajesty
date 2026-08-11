@@ -1,6 +1,6 @@
 # Repo Agent Appendix (Layer 2)
 
-**Archived from CLAUDE.md 2026-07-20.**
+**Archived from CLAUDE.md 2026-07-11.** (The `claude/sophos-repo-exploration-vc4gne` lane re-archived the same body on 2026-07-20; the two are byte-identical apart from that date line, so the earlier — true — archive date is kept.)
 
 # Flickers of Majesty — AI Assistant Context
 
