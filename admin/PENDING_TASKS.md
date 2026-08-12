@@ -82,3 +82,9 @@
 3. Claude will enable the cart functionality
 4. Test in Snipcart test mode
 5. Go live!
+
+<!-- library register 2026-08-12T13:00:32.467Z -->
+| fom-photo-economics | 2 | CROSS-POLLINATION (MCS-13), UPGRADED P3->P2 by the business reframe: per-photo economic lifecycle — production/print costs in, sale proceeds out, which images actually PAY — for a fledgling print business this is core business intelligence, the exact which-genetics-pay question with photographs |
+
+<!-- library register 2026-08-12T15:52:15.203Z -->
+| fom-storefront-completion | 1 | BUSINESS (TODO.md: 40 items, zero checked): storefront has NO About/Contact/Shipping/FAQ/Privacy/ToS and no working cart — Claude half (pages, templates, sitemap, schema) + operator half (Snipcart/Stripe accounts, pricing, real photography, fulfillment partner) |
