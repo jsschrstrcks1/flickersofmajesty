@@ -1,12 +1,13 @@
 # Library — flickersofmajesty shelf
 
-**Household SSOT:** `/Users/kenbaker/ocs-work/.household-library/`  
-**CLI:** `node /Users/kenbaker/ocs-work/admin/library.mjs`
+**Complete documentation:** `<OCS>/docs/HOUSEHOLD-LIBRARY.md`
+**Household SSOT:** `<OCS>/.household-library/`
+**CLI:** `node <OCS>/admin/library.mjs`
 
 ## Before any user task
 
 ```bash
-node /Users/kenbaker/ocs-work/admin/library.mjs preflight --query "<task>" --patron <you> --merge --repo flickersofmajesty
+node <OCS>/admin/library.mjs preflight --query "<task>" --patron <you> --merge --repo flickersofmajesty
 ```
 
 | File | Role |
