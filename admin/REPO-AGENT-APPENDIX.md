@@ -1,6 +1,6 @@
 # Repo Agent Appendix (Layer 2)
 
-**Archived from CLAUDE.md 2026-07-20.**
+**Archived from CLAUDE.md 2026-07-11.**
 
 # Flickers of Majesty — AI Assistant Context
 
