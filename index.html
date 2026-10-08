@@ -52,6 +52,7 @@
           <li><a href="/collections/">Collections</a></li>
           <li><a href="/prints/">Print Formats</a></li>
           <li><a href="/about/">About</a></li>
+          <li><a href="#updates">Field Notes</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
@@ -80,6 +81,7 @@
         <li><a href="/collections/">Collections</a></li>
         <li><a href="/prints/">Print Formats</a></li>
         <li><a href="/about/">About</a></li>
+        <li><a href="#updates">Field Notes</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
@@ -278,6 +280,56 @@
       </div>
     </section>
 
+    <!-- =========================
+         FIELD NOTES — newsletter signup
+         =========================
+         The POST goes to the newsletter server's /signup endpoint. That server
+         picks the sender from the Host header, so this form must post to a host
+         that resolves to the flickersofmajesty sender:
+         news.flickersofmajesty.com. Posting it to another sender's host would
+         file the subscriber, and their consent, under a different brand — the
+         server now refuses that outright (403 ORIGIN_NOT_SENDER_CLAIMED).
+
+         The hidden _hp field is a honeypot: it is invisible to people, and a
+         bot that fills it is silently dropped. Keep the name exactly "_hp".
+
+         No JS is required. Without it the plain form POST works and the browser
+         lands on the server's own confirmation page.
+         ========================= -->
+    <section class="content-section" id="updates" aria-labelledby="updates-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="updates-title">Field Notes</h2>
+          <p class="section-subtitle">
+            Occasional letters from the field &mdash; new prints, the places behind
+            them, and what is on the easel next.
+          </p>
+        </header>
+
+        <div class="signup-panel">
+          <form id="signup" method="post"
+                action="https://news.flickersofmajesty.com/signup" novalidate>
+            <label for="signup-email">Email address</label>
+            <div class="signup-row">
+              <input type="email" id="signup-email" name="email" required
+                     placeholder="you@example.com" autocomplete="email">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <!-- honeypot: must stay empty. Bots that fill it are dropped. -->
+            <div class="signup-hp" aria-hidden="true">
+              <label for="signup-hp">Leave this field empty</label>
+              <input type="text" id="signup-hp" name="_hp" tabindex="-1" autocomplete="off">
+            </div>
+          </form>
+          <p class="signup-fine">
+            We email a confirmation link first. Your address is not added to the
+            list until you click it. Unsubscribe anytime, in one click.
+          </p>
+          <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- =========================
@@ -369,5 +421,47 @@
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
   -->
 
+<script>
+  // Field Notes signup — progressive enhancement only.
+  //
+  // Submitted with fetch so the server's own message can appear in place
+  // instead of navigating the visitor away from the gallery. If this script
+  // never runs, the plain form POST still works and the browser lands on the
+  // server's confirmation page — so nothing here is load-bearing.
+  (function () {
+    var form = document.getElementById('signup');
+    var msg = document.getElementById('signup-msg');
+    if (!form || !msg) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.textContent = '';
+      msg.className = 'signup-msg';
+
+      fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)) })
+        .then(function (res) {
+          return res.text().then(function (text) {
+            // The endpoint answers with a small HTML page. Read the heading out
+            // of it rather than inventing our own wording, so the site can never
+            // claim something the server did not say.
+            var doc = new DOMParser().parseFromString(text, 'text/html');
+            var h1 = doc.querySelector('h1');
+            var heading = h1 ? h1.textContent.trim() : '';
+            if (res.ok) {
+              msg.className = 'signup-msg ok';
+              msg.textContent = heading || 'Check your inbox to confirm.';
+            } else {
+              msg.className = 'signup-msg err';
+              msg.textContent = heading || 'That address could not be accepted. Please try another.';
+            }
+          });
+        })
+        .catch(function () {
+          msg.className = 'signup-msg err';
+          msg.textContent = 'Could not reach the signup service. Please try again shortly.';
+        });
+    });
+  }());
+  </script>
 </body>
 </html>

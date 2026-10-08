@@ -1423,3 +1423,97 @@ img {
     break-inside: avoid;
   }
 }
+
+/* ==========================================================================
+   Field Notes - newsletter signup
+   ==========================================================================
+   Kept in the site's own palette (--accent, --border, --text-*) so the section
+   reads as part of the gallery rather than as an embedded third-party form.
+   The honey-pot is moved off-screen rather than display:none, because some
+   crawlers skip hidden inputs entirely and then the trap never fires.
+   ========================================================================== */
+
+.signup-panel {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: var(--space-xl, 2.5rem);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 4px);
+}
+
+.signup-panel label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.signup-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.signup-row input[type="email"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.signup-row input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.signup-row .btn {
+  flex: 0 0 auto;
+  padding: 0.85rem 1.75rem;
+}
+
+/* Off-screen, not display:none - a hidden field is skipped by some crawlers,
+   and then the trap never fires. */
+.signup-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.signup-fine {
+  margin-top: 1.1rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.signup-msg {
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+  min-height: 1.2em;
+}
+
+.signup-msg.ok { color: var(--success); }
+.signup-msg.err { color: var(--error); }
+
+@media (max-width: 560px) {
+  .signup-row { flex-direction: column; }
+  .signup-row .btn { width: 100%; }
+}
+
+@media print {
+  .signup-panel, .signup-hp { display: none !important; }
+}
