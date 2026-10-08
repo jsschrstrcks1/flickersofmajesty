@@ -26,6 +26,15 @@
             "timeout": 15
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/reasoning-log-inject.sh prompt",
+            "timeout": 15
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -57,6 +66,38 @@
             "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/prompt-injection-guard.js"
           }
         ]
+      },
+      {
+        "matcher": "Bash|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/reasoning-reveal.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/dangerous-command-guard.mjs",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/library-preflight-guard.js"
+          },
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/bootstrap-guard.mjs"
+          },
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/hls-claim-guard.mjs"
+          }
+        ]
       }
     ],
     "SessionStart": [
@@ -85,6 +126,15 @@
             "timeout": 30
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/reasoning-log-inject.sh session",
+            "timeout": 30
+          }
+        ]
       }
     ],
     "Stop": [
@@ -94,6 +144,24 @@
             "type": "command",
             "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/memory-autopersist.sh",
             "timeout": 60
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/reasoning-log-persist.sh",
+            "timeout": 60
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/stop-usage-footer-gate.mjs",
+            "timeout": 20
           }
         ]
       }
