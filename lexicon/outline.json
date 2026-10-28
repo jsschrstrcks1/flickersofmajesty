@@ -1,0 +1,6 @@
+{
+  "_about": "The parts of flickersofmajesty the manual describes, in order. Authored by hand; add a capability's slug to a section once it is written (Project-Sophos admin/change-record.mjs reflow --repo .).",
+  "title": "flickersofmajesty: what it can do, and how it got here",
+  "intro": "A fine-art photography dropship storefront (flickersofmajesty.com) of hand-written static HTML pages built on the FOM-Lite Protocol that makes listings readable by AI assistants.",
+  "sections": []
+}
