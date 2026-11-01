@@ -8,6 +8,16 @@ Every agent that works in this repo **except Claude** — Grok, Codex, Hermes, t
 Sophos/HELM pipeline — records the reasoning behind its calls here. Claude is excluded
 by operator directive (2026-10-08). Newest entries at the top.
 
+## 2026-11-01 — Argus observer post-commit hook (argus-s32)
+
+**Asked.** Ken: give Argus observation in every household repo that lacks it, one repo per commit.
+
+**Weighed.** Argus's own `observe hook-plan` read "create" on a fresh origin/main, so no observer hook was here. The generated block is a post-commit, advisory only: it cannot refuse a commit, exits 0 on every path, runs nothing when ARGUS_OBSERVE=0, and prints to stderr when no Argus checkout is found. Blast radius is one no-op after a commit lands. I rejected editing the existing pre-commit chain; a separate post-commit file is smaller and reversible.
+
+**Decided.** Apply the generated block as `.githooks/post-commit`, byte-identical across the rollout (sha256 21b077eba052, mode 755). Change entry marked untested, because the hook body is pinned by tests in the Argus repo (observer-hook-cli.test.mjs, 58 observer tests) and not here. Writing this log file tripped the claim-guard store-split gap; Ken authorized HLS_COORD_OVERRIDE=1 for this task's REASONING-LOG writes, recorded here as his operator approval, not a self-granted dodge.
+
+**Unsure.** Whether this repo's `core.hooksPath` points at `.githooks` so the hook actually arms. That is a rollout check, recorded as a limit, not proven by this commit.
+
 ## 2026-10-08 — Rescuing the orphaned reasoning-log chain, with the runtime scope corrected
 
 **Asked.** Rescue the flickers repo's orphan work. One item is the reasoning-log
