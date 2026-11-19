@@ -1,0 +1,571 @@
+{
+  "format": "lexicon-entity/1",
+  "entity": "change:20261119-skill-sync-sophos",
+  "_about": "Written by admin/change-record.mjs new. Append-only once on main; a correction is a new entry naming this one in supersedes. docs/lexicon/CHANGE-RECORD.md",
+  "statements": [
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#task",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos task = \"skill-sync-household-20261119\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "committer",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "task",
+        "value": "skill-sync-household-20261119",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-3edccc0b8777eddb"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#why",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos why = \"The sophos skill changed at its source (ocs-mirror-gr@8886e5a545a2) and this copy is declared synced.\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "committer",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "why",
+        "value": "The sophos skill changed at its source (ocs-mirror-gr@8886e5a545a2) and this copy is declared synced.",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-881eefd7cecc9811"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#enables",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos enables = \"This repository carries the current sophos skill, byte-identical to its source.\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "committer",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "enables",
+        "value": "This repository carries the current sophos skill, byte-identical to its source.",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-9a1080632c90fded"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#untested_reason",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos untested_reason = \"a mirrored skill file; skill-sync verified it byte-identical to the source before staging\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "committer",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "untested_reason",
+        "value": "a mirrored skill file; skill-sync verified it byte-identical to the source before staging",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-466a25ee6aa78b74"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#rests_on",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos rests_on = \"tools/skill-sync manifest: a synced skill's copies match its source\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "Tekton",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "rests_on",
+        "value": "tools/skill-sync manifest: a synced skill's copies match its source",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-0c2b1a7dd56205cc"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#costs",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos costs = \"one commit per drifted repo, made by skill-sync\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "Tekton",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "costs",
+        "value": "one commit per drifted repo, made by skill-sync",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-b1174d65f24531e6"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#retires",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos retires = \"the skill-sync drift blocking every open-claw-stuff push from this machine\"",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "Tekton",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "retires",
+        "value": "the skill-sync drift blocking every open-claw-stuff push from this machine",
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-9c5236cf35b5632e"
+    },
+    {
+      "schema_version": "envelope/1",
+      "kind": "claim",
+      "subject": "change:20261119-skill-sync-sophos#moved",
+      "content": {
+        "summary": "change:20261119-skill-sync-sophos moved = {\"modules_added\":[],\"modules_removed\":[],\"exports_changed\":[]}",
+        "ref": null,
+        "hash": null
+      },
+      "provenance": {
+        "source_kind": "lexicon-statement",
+        "source_ref": "tekton:skill-sync-household-20261119",
+        "uri": null,
+        "publisher": "measured",
+        "trust_tier": "unrated"
+      },
+      "actor": {
+        "kind": "agent",
+        "id": "unknown",
+        "provider": "household",
+        "model": null
+      },
+      "epistemic": {
+        "status": "known",
+        "tier": null,
+        "evidence": [
+          {
+            "ref": "tekton:skill-sync-household-20261119",
+            "tier": "primary"
+          }
+        ]
+      },
+      "uncertainty": {
+        "ignorance": 0.25,
+        "conflict": 0,
+        "basis": "statement with status 'known' and 1 evidence ref(s); not calibrated"
+      },
+      "validators": [],
+      "policies": [],
+      "dependencies": [],
+      "lineage": {
+        "parents": [],
+        "derived_by": null
+      },
+      "cost": {
+        "tokens_in": null,
+        "tokens_out": null,
+        "usd": null,
+        "ms": null
+      },
+      "timestamps": {
+        "valid_from": null,
+        "valid_until": null,
+        "asserted_at": "2026-11-19T21:23:46.594Z",
+        "observed_at": "2026-11-19T21:23:46.594Z"
+      },
+      "decision": null,
+      "ext": {
+        "type": "lexicon-statement/1",
+        "pack": "household.change",
+        "entity": "change:20261119-skill-sync-sophos",
+        "property": "moved",
+        "value": {
+          "modules_added": [],
+          "modules_removed": [],
+          "exports_changed": []
+        },
+        "unit": null,
+        "rank": "normal",
+        "partition": "household-internal"
+      },
+      "classification": "authorized-external",
+      "id": "env-c5b1513e0178b1af"
+    }
+  ]
+}
